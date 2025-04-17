@@ -19,50 +19,83 @@ Date:
 
 ## Features
 ### MVP (Minimum Viable Product)
-1. **[Feature 1]**
-   - [Sub-feature]
-   - [Sub-feature]
+1. **Personal Challenge**
+   - Creates a closed challenge that friends can bet under or over 
+   - The user can get commissions on how many people bet on them
+   - Each user has their own profiles with their own stats for more info
+   - Verified by the betters if proof is a valid submission
 
-2. **[Feature 2]**
-   - [Sub-feature]
-   - [Sub-feature]
+2. **Duo: Head to Head Comps**
+   - Typically to deal with more consistency like who can go to the gym consitently etc.
+   - For now, bet who can win between the two
 
 3. **[Feature 3]**
    - [Sub-feature]
    - [Sub-feature]
 
 ## Database Schema
-### [Collection 1]
+### User Profile
 ```json
 {
-  "field1": "type",
-  "field2": "type"
+  "Name": "String",
+  "Friends": "Array[Objects]",
+  "Height": "number",
+  "Weight": "number",
+  "Bets Won": "number",
+  "Bets Lost": "number",
+  "Bench PR": "number",
+  "Squat PR": "number",
+  "Deadlift PR": "number",
+  "Bets": "Array[Bet objects]",
 }
 ```
 
-### [Collection 2]
+### SetBet
 ```json
 {
-  "field1": "type",
-  "field2": "type"
+  "Bet Title": "String",
+  "Bet Specifications": "String",
+  "Type of Bet": "String",
+  "Line": "number",
+  "Type of Expiration": "Time",
+  "Betters":"Array[Objects of users]",
+  "Active": "Boolean"
+}
+```
+
+### Gamble
+```json
+{
+  "Amount gamble": "number",
+  "Payout": "number",
+  "Time of Expiration": "Time",
+  "": "type",
+  "": "type",
+  "": "type",
+  "Active": "Boolean"
 }
 ```
 
 ## API Endpoints
 ### [Category 1]
-- `[HTTP Method] /api/[endpoint]` - [Description]
-
-### [Category 2]
-- `[HTTP Method] /api/[endpoint]` - [Description]
+##### GET, DELETE, POST
+- `POST /api/[place:betid]` - [Takes bet id within the data based on place bet, and places it for that specific user]
+- `[POST /api/[place:betproof]` - [mp4 video proof of completing the challenge]
 
 ## Frontend Pages
-1. **[Page 1]**
-   - [Component/Feature]
-   - [Component/Feature]
+1. **[Home]**
+   - Place bet button
+   - Create new challenge button
+   - Challenges
+      - profile link
+      
+2. **[Friends]**
+   - Add friend button
+   - 
 
-2. **[Page 2]**
-   - [Component/Feature]
-   - [Component/Feature]
+3. **[Profile]**
+   - Edit profile button
+   - Profile cards
 
 ## UI Components
 1. **[Component 1]**
